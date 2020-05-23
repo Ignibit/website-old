@@ -3,24 +3,20 @@
 	<head>
 		<title>Ignibit - VR, AR and interactive solutions.</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link href="css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/reset.dc9ff4e8.css" type="text/css" rel="stylesheet">
 
-		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,800" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css?family=Barlow:400,600,800" rel="stylesheet" />
-		<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,800" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Barlow:400,600,800" rel="stylesheet">
+		<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 
-		<link href="css/style.css" rel="stylesheet" />
+		<link href="/style.78032849.css" rel="stylesheet">
 
-		<script
-			src="https://code.jquery.com/jquery-3.3.1.min.js"
-			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			crossorigin="anonymous"
-		></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 
-		<link rel="icon" href="img/favicon.png" />
+		<link rel="icon" href="/favicon.08708974.png">
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117515928-1"></script>
@@ -34,80 +30,70 @@
 			gtag('config', 'UA-117515928-1');
 		</script> -->
 
-		<script>
-			$(document).ready(function () {
-				$('#modal_close').click(function () {
-					closeModal();
-				});
+		<script>$(document).ready(function () {
+  $('#modal_close').click(function () {
+    closeModal();
+  });
+  $('#modal').click(function (event) {
+    if (this != event.target) return;
+    closeModal();
+  });
+  $('.modal_open').click(function (event) {
+    event.preventDefault();
+    var modalContent = $(event.currentTarget).find('.lightbox_insertable_content').html();
+    openModal(modalContent);
+  });
+  $('#contactform').submit(function (event) {
+    event.preventDefault();
+    sendContactForm();
+    return false;
+  });
+});
 
-				$('#modal').click(function (event) {
-					if (this != event.target) return;
-					closeModal();
-				});
+function sendContactForm() {
+  var request = new XMLHttpRequest();
+  request.open('POST', document.forms['contactform'].action, true);
+  request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-				$('.modal_open').click(function (event) {
-					event.preventDefault();
-					var modalContent = $(event.currentTarget).find('.lightbox_insertable_content').html();
-					openModal(modalContent);
-				});
+  request.onreadystatechange = function () {
+    if (request.readyState == XMLHttpRequest.DONE) {
+      if (request.status == 200) {
+        $('#mailResponse').html(request.responseText.substring(1));
+        if (request.responseText.substring(0, 1) === '1') document.forms['contactform'].reset();
+        $(document.forms['contactform']).slideDown(1000);
+      } else {
+        $('#mailResponse').html('Sorry, there was an error while handling your request. Please try again later. Code ' + request.status);
+        $(document.forms['contactform']).slideDown(1000);
+      }
+    }
+  };
 
-				$('#contactform').submit(function (event) {
-					event.preventDefault();
-					sendContactForm();
-					return false;
-				});
-			});
+  var formInputs = document.forms['contactform'].getElementsByClassName('fi');
+  var data = '';
 
-			function sendContactForm() {
-				var request = new XMLHttpRequest();
+  for (i = 0; i < formInputs.length; i++) {
+    data += formInputs[i].name + '=' + encodeURIComponent(formInputs[i].value);
+    if (i < formInputs.length - 1) data += '&';
+  }
 
-				request.open('POST', document.forms['contactform'].action, true);
-				request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  $(document.forms['contactform']).slideUp(1000, function () {
+    setTimeout(function () {
+      request.send(data);
+    }, 1000);
+  });
+}
 
-				request.onreadystatechange = function () {
-					if (request.readyState == XMLHttpRequest.DONE) {
-						if (request.status == 200) {
-							$('#mailResponse').html(request.responseText.substring(1));
-							if (request.responseText.substring(0, 1) === '1')
-								document.forms['contactform'].reset();
-							$(document.forms['contactform']).slideDown(1000);
-						} else {
-							$('#mailResponse').html(
-								'Sorry, there was an error while handling your request. Please try again later. Code ' +
-									request.status
-							);
-							$(document.forms['contactform']).slideDown(1000);
-						}
-					}
-				};
+function openModal(content) {
+  $('#modal').find('.lightbox').find('.content').html(content);
+  $('#modal').css('display', 'flex').hide().fadeIn(200);
+}
 
-				var formInputs = document.forms['contactform'].getElementsByClassName('fi');
-				var data = '';
-
-				for (i = 0; i < formInputs.length; i++) {
-					data += formInputs[i].name + '=' + encodeURIComponent(formInputs[i].value);
-					if (i < formInputs.length - 1) data += '&';
-				}
-
-				$(document.forms['contactform']).slideUp(1000, function () {
-					setTimeout(function () {
-						request.send(data);
-					}, 1000);
-				});
-			}
-
-			function openModal(content) {
-				$('#modal').find('.lightbox').find('.content').html(content);
-				$('#modal').css('display', 'flex').hide().fadeIn(200);
-			}
-
-			function closeModal() {
-				$('#modal').fadeOut(200, function () {
-					$('#modal').find('.lightbox').find('.content').html('');
-				});
-			}
-		</script>
-	</head>
+function closeModal() {
+  $('#modal').fadeOut(200, function () {
+    $('#modal').find('.lightbox').find('.content').html('');
+  });
+}</script>
+	<script src="/reset.dc9ff4e8.js"></script><script src="/style.78032849.js"></script></head>
 
 	<body>
 		<div id="modal_wrapper">
@@ -121,11 +107,8 @@
 
 		<div class="hero">
 			<div class="bgvid_container">
-				<video autoplay muted loop class="bgvid">
-					<source
-						src="https://res.cloudinary.com/ohcash/video/upload/v1590264050/ignibit/www.mp4"
-						type="video/mp4"
-					/>
+				<video autoplay="" muted="" loop="" class="bgvid">
+					<source src="https://res.cloudinary.com/ohcash/video/upload/v1590264050/ignibit/www.mp4" type="video/mp4">
 				</video>
 			</div>
 			<div class="bgoverlay"></div>
@@ -145,15 +128,15 @@
 
 			<div class="contentwidth flexrow">
 				<div class="flexhalf">
-					<img src="img/iblogo_white_v.png" class="logo" />
-					<img src="img/prev.png" class="logo" />
+					<img src="/iblogo_white_v.0027a7ac.png" class="logo">
+					<img src="/prev.4293a485.png" class="logo">
 				</div>
 
 				<div class="flexhalf">
 					<div class="tagline_wrapper">
 						<h1 class="tagline">Ignite Greatness with VR, AR and MR</h1>
 						<p>
-							Each big creation starts with a single spark.<br />We make sure this spark happens.
+							Each big creation starts with a single spark.<br>We make sure this spark happens.
 						</p>
 					</div>
 				</div>
@@ -195,7 +178,7 @@
 				<div class="pad"></div>
 				<div class="row">
 					<div class="box box_third">
-						<img src="img/arkit512.png" alt="AR" class="main" />
+						<img src="/arkit512.a5592f85.png" alt="AR" class="main">
 						<div class="title">Augmented Reality</div>
 						<p>
 							Using your smartphone and our code, you can place virtual objects in the environment
@@ -203,7 +186,7 @@
 						</p>
 					</div>
 					<div class="box box_third">
-						<img src="img/oculus512.png" alt="VR" class="main" />
+						<img src="/oculus512.29eae8ce.png" alt="VR" class="main">
 						<div class="title">Virtual Reality</div>
 						<p>
 							We present, train, visualise and entertain using VR. You put on a headset, we make the
@@ -211,7 +194,7 @@
 						</p>
 					</div>
 					<div class="box box_third">
-						<img src="img/mrvideo.png" alt="MR" class="main" />
+						<img src="/mrvideo.78b23f7f.png" alt="MR" class="main">
 						<div class="title">Mixed Reality videos</div>
 						<p>We can place yourself in the virtual world using Polands' first MR studio.</p>
 					</div>
@@ -225,7 +208,7 @@
 			<div class="contentwidth">
 				<div class="row">
 					<div class="box box_third flex-center">
-						<img src="img/zk_w.png" alt="ShoVRoom" class="main zk" />
+						<img src="/zk_w.bbd10e7e.png" alt="ShoVRoom" class="main zk">
 						<div class="title">Zero Killed</div>
 						<p>The new generation of battle.</p>
 					</div>
@@ -240,7 +223,7 @@
 
 					<div class="box box_third desc">
 						<a href="http://playzerokilled.com/" target="_blank" class="yt_thumb">
-							<img src="img/thumbs/zerokilled.png" alt="Zero Killed showcase" />
+							<img src="/zerokilled.d6c1f9b9.png" alt="Zero Killed showcase">
 						</a>
 					</div>
 
@@ -255,7 +238,7 @@
 			<div class="contentwidth">
 				<div class="row">
 					<div class="box box_third">
-						<img src="img/shovroom-placeh.png" alt="ShoVRoom" class="main" />
+						<img src="/shovroom-placeh.23497c76.png" alt="ShoVRoom" class="main">
 						<div class="title">ShoVRoom</div>
 						<p>
 							Using your smartphone and our code, you can place virtual objects in the environment
@@ -275,20 +258,10 @@
 					</div>
 
 					<div class="box box_third desc">
-						<a
-							href="https://www.youtube.com/watch?v=ayevYhYscgg"
-							target="_blank"
-							class="modal_open yt_thumb"
-						>
-							<img src="img/thumbs/shovroom.png" alt="ShoVRoom showcase" />
+						<a href="https://www.youtube.com/watch?v=ayevYhYscgg" target="_blank" class="modal_open yt_thumb">
+							<img src="/shovroom.3e85efb1.png" alt="ShoVRoom showcase">
 							<div class="lightbox_insertable_content">
-								<iframe
-									class="yt"
-									src="https://www.youtube.com/embed/ayevYhYscgg?rel=0"
-									frameborder="0"
-									allow="autoplay; encrypted-media"
-									allowfullscreen
-								></iframe>
+								<iframe class="yt" src="https://www.youtube.com/embed/ayevYhYscgg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 							</div>
 						</a>
 					</div>
@@ -324,20 +297,10 @@
 					</div>
 
 					<div class="box box_third desc">
-						<a
-							href="https://www.youtube.com/watch?v=kZ-OZmWn9nk"
-							target="_blank"
-							class="modal_open yt_thumb"
-						>
-							<img src="img/thumbs/trainings.png" alt="Trainings showcase" />
+						<a href="https://www.youtube.com/watch?v=kZ-OZmWn9nk" target="_blank" class="modal_open yt_thumb">
+							<img src="/trainings.bd2ee4a7.png" alt="Trainings showcase">
 							<div class="lightbox_insertable_content">
-								<iframe
-									class="yt"
-									src="https://www.youtube.com/embed/kZ-OZmWn9nk?rel=0"
-									frameborder="0"
-									allow="autoplay; encrypted-media"
-									allowfullscreen
-								></iframe>
+								<iframe class="yt" src="https://www.youtube.com/embed/kZ-OZmWn9nk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 							</div>
 						</a>
 					</div>
@@ -373,20 +336,10 @@
 					</div>
 
 					<div class="box box_third desc">
-						<a
-							href="https://www.youtube.com/watch?v=quJzBeGGo7Q"
-							target="_blank"
-							class="modal_open yt_thumb"
-						>
-							<img src="img/thumbs/mindracer.png" alt="Mindracer showcase" />
+						<a href="https://www.youtube.com/watch?v=quJzBeGGo7Q" target="_blank" class="modal_open yt_thumb">
+							<img src="/mindracer.27ac203f.png" alt="Mindracer showcase">
 							<div class="lightbox_insertable_content">
-								<iframe
-									class="yt"
-									src="https://www.youtube.com/embed/quJzBeGGo7Q?rel=0"
-									frameborder="0"
-									allow="autoplay; encrypted-media"
-									allowfullscreen
-								></iframe>
+								<iframe class="yt" src="https://www.youtube.com/embed/quJzBeGGo7Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 							</div>
 						</a>
 					</div>
@@ -404,15 +357,15 @@
 
 				<div class="row alignbottom">
 					<div class="box box_third">
-						<img src="img/clients/volkswagen.svg" alt="Volkswagen logo" class="main customer" />
+						<img src="/volkswagen.bdc3a23b.svg" alt="Volkswagen logo" class="main customer">
 						<div class="title">Volkswagen</div>
 					</div>
 					<div class="box box_third">
-						<img src="img/clients/saab.svg" alt="SAAB logo" class="main customer" />
+						<img src="/saab.801b4e65.svg" alt="SAAB logo" class="main customer">
 						<div class="title">SAAB</div>
 					</div>
 					<div class="box box_third">
-						<img src="img/clients/cadillac.svg" alt="Cadillac logo" class="main customer" />
+						<img src="/cadillac.60fa85dd.svg" alt="Cadillac logo" class="main customer">
 						<div class="title">Cadillac</div>
 					</div>
 					<div class="clearfix"></div>
@@ -420,15 +373,15 @@
 
 				<div class="row alignbottom">
 					<div class="box box_third">
-						<img src="img/clients/compensa.svg" alt="Compensa logo" class="main customer" />
+						<img src="/compensa.7153f456.svg" alt="Compensa logo" class="main customer">
 						<div class="title">Compensa</div>
 					</div>
 					<div class="box box_third">
-						<img src="img/clients/mirinda.svg" alt="Mirinda logo" class="main customer" />
+						<img src="/mirinda.b39b1fd3.svg" alt="Mirinda logo" class="main customer">
 						<div class="title">Mirinda</div>
 					</div>
 					<div class="box box_third">
-						<img src="img/clients/semeko.svg" alt="Semeko logo" class="main customer" />
+						<img src="/semeko.7abb99ee.svg" alt="Semeko logo" class="main customer">
 						<div class="title">Semeko</div>
 					</div>
 					<div class="clearfix"></div>
@@ -436,15 +389,15 @@
 
 				<div class="row alignbottom">
 					<div class="box box_third">
-						<img src="img/clients/arrinera.svg" alt="Arrinera logo" class="main customer" />
+						<img src="/arrinera.f09ec2c3.svg" alt="Arrinera logo" class="main customer">
 						<div class="title">Arrinera</div>
 					</div>
 					<div class="box box_third">
-						<img src="img/clients/gdb.svg" alt="Green Dream Boats logo" class="main customer" />
+						<img src="/gdb.a5c92c96.svg" alt="Green Dream Boats logo" class="main customer">
 						<div class="title">Green Dream Boats</div>
 					</div>
 					<div class="box box_third">
-						<img src="img/clients/airborn.svg" alt="Airborn logo" class="main customer" />
+						<img src="/airborn.86ebf767.svg" alt="Airborn logo" class="main customer">
 						<div class="title">Airborn</div>
 					</div>
 					<div class="clearfix"></div>
@@ -473,7 +426,7 @@
 				<div class="card offset"></div>
 
 				<div class="card">
-					<img src="img/zkvr.png" />
+					<img src="/zkvr.12be2d1d.png">
 					<div class="description">
 						<h1 class="title">Zero Killed</h1>
 						<p class="bold">The new generation of battle</p>
@@ -488,7 +441,7 @@
 				</div>
 
 				<div class="card">
-					<img src="img/shovroomcard.png" />
+					<img src="/shovroomcard.6d6e4cb3.png">
 					<div class="description">
 						<h1 class="title">Shovroom</h1>
 						<p class="bold">Hassle-free product presentation</p>
@@ -503,7 +456,7 @@
 				</div>
 
 				<div class="card">
-					<img src="img/dreamcoaster.png" />
+					<img src="/dreamcoaster.aa017fb6.png">
 					<div class="description">
 						<h1 class="title">VR Rollercoasters</h1>
 						<p class="bold">A wild ride in your own home</p>
@@ -513,22 +466,18 @@
 							better compatibility and higher-quality experience.
 						</p>
 
-						<a
-							href="http://store.steampowered.com/bundle/4337/VR_Visio_Bundle/"
-							target="_blank"
-							class="rmore"
-						></a>
+						<a href="http://store.steampowered.com/bundle/4337/VR_Visio_Bundle/" target="_blank" class="rmore"></a>
 					</div>
 				</div>
 
 				<div class="card">
-					<img src="img/dhvr.png" />
+					<img src="/dhvr.ae523900.png">
 					<div class="description">
 						<h1 class="title">Drone Hunter VR</h1>
 						<p class="bold">An alien fleet is approaching the earth!</p>
 						<p>
 							Released in 2016 on Steam, Drone Hunter VR marks our debut in VR game market.
-							<br />The game has been later released on Gear VR platform, where it received many
+							<br>The game has been later released on Gear VR platform, where it received many
 							positive reviews.
 						</p>
 
@@ -537,7 +486,7 @@
 				</div>
 
 				<div class="card">
-					<img src="img/magicmirror.png" />
+					<img src="/magicmirror.3209190e.png">
 					<div class="description">
 						<h1 class="title">Magic Mirror</h1>
 						<p class="bold">Interactive mirror into the virtual world</p>
@@ -552,7 +501,7 @@
 				</div>
 
 				<div class="card">
-					<img src="img/cadillac.png" />
+					<img src="/cadillac.f65fa84e.png">
 					<div class="description">
 						<h1 class="title">Cadillac 360 &amp; AR</h1>
 						<p class="bold">Experience the luxury car before you buy it.</p>
@@ -565,7 +514,7 @@
 				</div>
 
 				<div class="card">
-					<img src="img/greencave.png" />
+					<img src="/greencave.27f1617d.png">
 					<div class="description">
 						<h1 class="title">Green Cave Studio</h1>
 						<p class="bold">The first MR green screen studio in Poland</p>
@@ -627,12 +576,7 @@
 
 			<div class="row">
 				<div class="map_wrapper">
-					<iframe
-						frameborder="0"
-						style="border: 0;"
-						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBNUD--Gp8iyPyvt1rEJ9K1QAVnqN8KxU0&q=VR+VISIO+GROUP+S.A.&zoom=16&maptype=satellite"
-						allowfullscreen
-					>
+					<iframe frameborder="0" style="border: 0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBNUD--Gp8iyPyvt1rEJ9K1QAVnqN8KxU0&q=VR+VISIO+GROUP+S.A.&zoom=16&maptype=satellite" allowfullscreen="">
 					</iframe>
 				</div>
 			</div>
@@ -640,70 +584,42 @@
 			<div class="contentwidth">
 				<div class="row">
 					<div class="box box_third largefont">
-						Write us an email<br />
-						<a href="mailto:office@ignibit.com"
-							><i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;<b>office@ignibit.com</b></a
-						>
+						Write us an email<br>
+						<a href="mailto:office@ignibit.com"><i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;<b>office@ignibit.com</b></a>
 					</div>
 					<div class="box box_third largefont">
-						Find us on social media<br />
-						<a href="http://facebook.com/ignibit" target="_blank" class="social"
-							><i class="fab fa-facebook-square"></i
-						></a>
-						<a href="http://twitter.com/_ignibit" target="_blank" class="social"
-							><i class="fab fa-twitter"></i
-						></a>
-						<a href="http://instagram.com/ignibit" target="_blank" class="social"
-							><i class="fab fa-instagram"></i
-						></a>
+						Find us on social media<br>
+						<a href="http://facebook.com/ignibit" target="_blank" class="social"><i class="fab fa-facebook-square"></i></a>
+						<a href="http://twitter.com/_ignibit" target="_blank" class="social"><i class="fab fa-twitter"></i></a>
+						<a href="http://instagram.com/ignibit" target="_blank" class="social"><i class="fab fa-instagram"></i></a>
 					</div>
 					<div class="box box_third largefont">
-						Call us<br />
-						<a href="tel:+48722322116"
-							><i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;<b>+48 722 322 116</b></a
-						>
+						Call us<br>
+						<a href="tel:+48722322116"><i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;<b>+48 722 322 116</b></a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 
 				<div style="max-width: 65em; margin: 0 auto;">
-					<br />
+					<br>
 					<h1>Contact Form</h1>
 				</div>
 				<form class="contactform" id="contactform" method="POST" action="php/mail.php">
 					<ul class="flex-outer">
 						<li>
 							<label for="first-name">Name</label>
-							<input
-								type="text"
-								class="fi"
-								id="first-name"
-								name="name"
-								placeholder="Enter your first name here"
-							/>
+							<input type="text" class="fi" id="first-name" name="name" placeholder="Enter your first name here">
 						</li>
 						<li>
 							<label for="email">Email</label>
-							<input
-								type="email"
-								class="fi"
-								id="email"
-								name="email"
-								placeholder="Enter your email here"
-							/>
+							<input type="email" class="fi" id="email" name="email" placeholder="Enter your email here">
 						</li>
 						<li>
 							<label for="message">Message</label>
-							<textarea
-								rows="6"
-								class="fi"
-								id="message"
-								name="body"
-								placeholder="Enter your message here"
-							></textarea>
+							<textarea rows="6" class="fi" id="message" name="body" placeholder="Enter your message here"></textarea>
 						</li>
 						<li>
-							<input type="submit" class="fi" value="Send Message" id="submit" name="submit" />
+							<input type="submit" class="fi" value="Send Message" id="submit" name="submit">
 						</li>
 					</ul>
 

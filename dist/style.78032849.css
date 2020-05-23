@@ -8,7 +8,7 @@
 body {
 	background-color: #eeeeee;
 	/* background: url('../img/panorama-2559103_1920.jpg') no-repeat center 80% fixed; */
-	background: url('../img/vidbg.png') no-repeat center center fixed;
+	background: url('/vidbg.e9642950.png') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -288,7 +288,7 @@ iframe.yt {
 }
 
 .bar.zkbg {
-	background: url('../img/sbrbs.jpg') no-repeat center 80% fixed;
+	background: url('/sbrbs.51b01278.jpg') no-repeat center 80% fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -305,7 +305,7 @@ iframe.yt {
 }
 
 .bar.trainingsbg {
-	background: url('../img/trainingsbg.png') no-repeat center 80% fixed;
+	background: url('/trainingsbg.6359c350.png') no-repeat center 80% fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -316,7 +316,7 @@ iframe.yt {
 
 .bar.eventsbg {
 	background-color: #222222;
-	background: url('../img/magicmirror.png') no-repeat center 80% fixed;
+	background: url('/magicmirror.3209190e.png') no-repeat center 80% fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -327,7 +327,7 @@ iframe.yt {
 
 .bar.shovroombg {
 	background-color: #222222;
-	background: url('../img/shovroombg.png') no-repeat center 80% fixed;
+	background: url('/shovroombg.9e91ee12.png') no-repeat center 80% fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -338,7 +338,7 @@ iframe.yt {
 
 .bar.interactivebg {
 	background-color: #222222;
-	background: url('../img/interactivebg.png') no-repeat center 80% fixed;
+	background: url('/interactivebg.377a3b93.png') no-repeat center 80% fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -852,3 +852,6 @@ textarea {
 		width: 100%;
 	}
 }
+
+
+/*# sourceMappingURL=/style.78032849.css.map */
