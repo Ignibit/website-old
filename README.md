@@ -1,5 +1,5 @@
 ![Last commit](https://img.shields.io/github/last-commit/Ignibit/website-old)
-![RepoSize](https://img.shields.io/github/repo-size/Ignibit/Ignibit/website-old)
+![RepoSize](https://img.shields.io/github/repo-size/Ignibit/website-old)
 
 ## Old website
 
