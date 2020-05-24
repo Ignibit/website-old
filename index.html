@@ -33,6 +33,64 @@
 
 			gtag('config', 'UA-117515928-1');
 		</script> -->
+		<!-- <script>
+			function submitToAPI(e) {
+				e.preventDefault();
+				var URL = 'https://abc1234.execute-api.us-east-1.amazonaws.com/01/contact';
+
+				var Namere = /[A-Za-z]{1}[A-Za-z]/;
+				if (!Namere.test($('#name-input').val())) {
+					alert('Name can not less than 2 char');
+					return;
+				}
+				var mobilere = /[0-9]{10}/;
+				if (!mobilere.test($('#phone-input').val())) {
+					alert('Please enter valid mobile number');
+					return;
+				}
+				if ($('#email-input').val() == '') {
+					alert('Please enter your email id');
+					return;
+				}
+
+				var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+				if (!reeamil.test($('#email-input').val())) {
+					alert('Please enter valid email address');
+					return;
+				}
+
+				var name = $('#name-input').val();
+				var phone = $('#phone-input').val();
+				var email = $('#email-input').val();
+				var desc = $('#description-input').val();
+				var data = {
+					name: name,
+					phone: phone,
+					email: email,
+					desc: desc,
+				};
+
+				$.ajax({
+					type: 'POST',
+					url: 'https://abc1234.execute-api.us-east-1.amazonaws.com/01/contact',
+					dataType: 'json',
+					crossDomain: 'true',
+					contentType: 'application/json; charset=utf-8',
+					data: JSON.stringify(data),
+
+					success: function () {
+						// clear form and show a success message
+						alert('Successfull');
+						document.getElementById('contact-form').reset();
+						location.reload();
+					},
+					error: function () {
+						// show an error message
+						alert('UnSuccessfull');
+					},
+				});
+			}
+		</script> -->
 
 		<script>
 			$(document).ready(function () {
@@ -53,48 +111,99 @@
 
 				$('#contactform').submit(function (event) {
 					event.preventDefault();
-					sendContactForm();
+					submitToAPI();
 					return false;
 				});
 			});
 
-			function sendContactForm() {
-				var request = new XMLHttpRequest();
+			function submitToAPI(e) {
+				event.preventDefault();
+				var URL =
+					'https://ju7qrql2j0.execute-api.eu-central-1.amazonaws.com/mailUsDeploy/contactus';
 
-				request.open('POST', document.forms['contactform'].action, true);
-				request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				// var Namere = /[A-Za-z]{1}[A-Za-z]/;
+				// if (!Namere.test($('#name-input').val())) {
+				// 	alert('Name can not less than 2 char');
+				// 	return;
+				// }
+				// if ($('#email-input').val() == '') {
+				// 	alert('Please enter your email id');
+				// 	return;
+				// }
 
-				request.onreadystatechange = function () {
-					if (request.readyState == XMLHttpRequest.DONE) {
-						if (request.status == 200) {
-							$('#mailResponse').html(request.responseText.substring(1));
-							if (request.responseText.substring(0, 1) === '1')
-								document.forms['contactform'].reset();
-							$(document.forms['contactform']).slideDown(1000);
-						} else {
-							$('#mailResponse').html(
-								'Sorry, there was an error while handling your request. Please try again later. Code ' +
-									request.status
-							);
-							$(document.forms['contactform']).slideDown(1000);
-						}
-					}
+				// var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+				// if (!reeamil.test($('#email-input').val())) {
+				// 	alert('Please enter valid email address');
+				// 	return;
+				// }
+
+				var name = $('#name').val();
+				var email = $('#email').val();
+				var body = $('#body').val();
+				var data = {
+					name: name,
+					email: email,
+					body: body,
 				};
 
-				var formInputs = document.forms['contactform'].getElementsByClassName('fi');
-				var data = '';
+				$.ajax({
+					type: 'POST',
+					url: 'https://ju7qrql2j0.execute-api.eu-central-1.amazonaws.com/mailUsDeploy/contactus',
+					dataType: 'json',
+					crossDomain: 'true',
+					contentType: 'application/json; charset=utf-8',
+					data: JSON.stringify(data),
 
-				for (i = 0; i < formInputs.length; i++) {
-					data += formInputs[i].name + '=' + encodeURIComponent(formInputs[i].value);
-					if (i < formInputs.length - 1) data += '&';
-				}
-
-				$(document.forms['contactform']).slideUp(1000, function () {
-					setTimeout(function () {
-						request.send(data);
-					}, 1000);
+					success: function () {
+						// clear form and show a success message
+						// alert('Successfull');
+						document.getElementById('contactform').reset();
+						// location.reload();
+					},
+					error: function () {
+						// show an error message
+						alert('UnSuccessfull');
+					},
 				});
 			}
+
+			// function sendContactForm() {
+			// 	var request = new XMLHttpRequest();
+
+			// 	request.open('POST', document.forms['contactform'].action, true);
+			// 	request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+			// 	request.onreadystatechange = function () {
+			// 		if (request.readyState == XMLHttpRequest.DONE) {
+			// 			if (request.status == 200) {
+			// 				$('#mailResponse').html(request.responseText.substring(1));
+			// 				if (request.responseText.substring(0, 1) === '1')
+			// 					document.forms['contactform'].reset();
+			// 				$(document.forms['contactform']).slideDown(1000);
+			// 			} else {
+			// 				$('#mailResponse').html(
+			// 					'Sorry, there was an error while handling your request. Please try again later. Code ' +
+			// 						request.status
+			// 				);
+			// 				$(document.forms['contactform']).slideDown(1000);
+			// 			}
+			// 		}
+			// 	};
+
+			// 	var formInputs = document.forms['contactform'].getElementsByClassName('fi');
+			// 	var data = '';
+
+			// 	for (i = 0; i < formInputs.length; i++) {
+			// 		data += formInputs[i].name + '=' + encodeURIComponent(formInputs[i].value);
+			// 		if (i < formInputs.length - 1) data += '&';
+			// 	}
+
+			// 	$(document.forms['contactform']).slideUp(1000, function () {
+			// 		setTimeout(function () {
+			// 			request.send(data);
+			// 		}, 1000);
+			// 	});
+			// }
 
 			function openModal(content) {
 				$('#modal').find('.lightbox').find('.content').html(content);
@@ -670,14 +779,14 @@
 					<br />
 					<h1>Contact Form</h1>
 				</div>
-				<form class="contactform" id="contactform" method="POST" action="php/mail.php">
+				<form class="contactform" id="contactform" method="POST">
 					<ul class="flex-outer">
 						<li>
 							<label for="first-name">Name</label>
 							<input
 								type="text"
 								class="fi"
-								id="first-name"
+								id="name"
 								name="name"
 								placeholder="Enter your first name here"
 							/>
@@ -697,7 +806,7 @@
 							<textarea
 								rows="6"
 								class="fi"
-								id="message"
+								id="body"
 								name="body"
 								placeholder="Enter your message here"
 							></textarea>
