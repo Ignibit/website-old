@@ -663,6 +663,7 @@ textarea {
 
 .flex-outer li input[type='submit'] {
 	margin-left: auto;
+	outline: none;
 	padding: 1em;
 	border: none;
 	background: #ffffff;
@@ -674,7 +675,15 @@ textarea {
 
 .flex-outer li input[type='submit']:hover {
 	color: #005896;
+	outline: none;
 	background-color: #ddddff;
+}
+
+.flex-outer li input[type='submit']:active {
+	background-color: #0b89f0;
+	outline: none;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
 
 .footer {
