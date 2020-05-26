@@ -103,6 +103,8 @@ function closeModal() {
     $('#modal').find('.lightbox').find('.content').html('');
   });
 }</script>
+
+		<script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
 	<script src="/reset.dc9ff4e8.js"></script><script src="/style.78032849.js"></script></head>
 
 	<body>
@@ -616,7 +618,7 @@ function closeModal() {
 					<br>
 					<h1>Contact Form</h1>
 				</div>
-				<form class="contactform" id="contactform" method="POST">
+				<form class="contactform" id="contactform" action="?" method="POST">
 					<ul class="flex-outer">
 						<li>
 							<label for="first-name">Name</label>
@@ -629,6 +631,9 @@ function closeModal() {
 						<li>
 							<label for="message">Message</label>
 							<textarea rows="6" class="fi" id="body" name="body" placeholder="Enter your message here"></textarea>
+						</li>
+						<li>
+							<div class="g-recaptcha" data-sitekey="6LfDk_wUAAAAAN5zDBzRFFLvFeH7soPXWYSrLIJB"></div>
 						</li>
 						<li>
 							<input type="submit" class="fi" value="Send Message" id="submit" name="submit">
