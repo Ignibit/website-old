@@ -658,7 +658,7 @@ textarea {
 
 .g-recaptcha {
 	margin-left: auto;
-	padding: 1em;
+	padding: 0.5em;
 }
 
 .flex-outer li input[type='submit'] {
