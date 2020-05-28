@@ -51,20 +51,25 @@ gtag('config', 'UA-117515928-1');</script>
 
 function submitToAPI(e) {
   event.preventDefault();
-  var URL = 'https://ju7qrql2j0.execute-api.eu-central-1.amazonaws.com/mailUsDeploy/contactus'; // var Namere = /[A-Za-z]{1}[A-Za-z]/;
-  // if (!Namere.test($('#name').val())) {
-  // 	alert('Name can not be empty');
-  // 	return;
-  // }
-  // if ($('#email').val() == '') {
-  // 	alert('Please enter your email');
-  // 	return;
-  // }
-  // var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-  // if (!reeamil.test($('#email').val())) {
-  // 	alert('Please enter valid email address');
-  // 	return;
-  // }
+  var URL = 'https://ju7qrql2j0.execute-api.eu-central-1.amazonaws.com/mailUsDeploy/contactus';
+  var Namere = /[A-Za-z]{1}[A-Za-z]/;
+
+  if (!Namere.test($('#name').val())) {
+    alert('Name can not be empty');
+    return;
+  }
+
+  if ($('#email').val() == '') {
+    alert('Please enter your email');
+    return;
+  }
+
+  var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+
+  if (!reeamil.test($('#email').val())) {
+    alert('Please enter valid email address');
+    return;
+  }
 
   var name = $('#name').val();
   var email = $('#email').val();
@@ -599,7 +604,7 @@ function closeModal() {
 						<a href="mailto:office@ignibit.com"><i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;<b>office@ignibit.com</b></a>
 					</div>
 					<div class="box box_third largefont">
-						Follow us on social media<br>
+						Follow us<br>
 						<a href="http://facebook.com/ignibit" target="_blank" class="social"><i class="fab fa-facebook-square"></i></a>
 						<a href="http://twitter.com/_ignibit" target="_blank" class="social"><i class="fab fa-twitter"></i></a>
 						<a href="http://instagram.com/ignibit" target="_blank" class="social"><i class="fab fa-instagram"></i></a>
@@ -608,6 +613,10 @@ function closeModal() {
 					<div class="box box_third largefont">
 						Call us<br>
 						<a href="tel:+48722322116"><i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;<b>+48 722 322 116</b></a>
+					</div>
+					<div class="box box_third largefont">
+						More<br>
+						<a href="#"><i class=""></i>&nbsp;&nbsp;&nbsp;<b>Investors</b></a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
