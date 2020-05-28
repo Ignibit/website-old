@@ -36,6 +36,12 @@ body {
 	color: black;
 }
 
+.logo {
+	max-width: 5em;
+	box-sizing: border-box;
+	width: 100%;
+}
+
 /* Column container */
 .row {
 	display: flex;
