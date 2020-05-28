@@ -117,12 +117,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"css/style.css":[function(require,module,exports) {
+})({"css/investors.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../img/vidbg.png":[["vidbg.e9642950.png","img/vidbg.png"],"img/vidbg.png"],"./../img/sbrbs.jpg":[["sbrbs.51b01278.jpg","img/sbrbs.jpg"],"img/sbrbs.jpg"],"./../img/trainingsbg.png":[["trainingsbg.6359c350.png","img/trainingsbg.png"],"img/trainingsbg.png"],"./../img/magicmirror.png":[["magicmirror.3209190e.png","img/magicmirror.png"],"img/magicmirror.png"],"./../img/shovroombg.png":[["shovroombg.9e91ee12.png","img/shovroombg.png"],"img/shovroombg.png"],"./../img/interactivebg.png":[["interactivebg.377a3b93.png","img/interactivebg.png"],"img/interactivebg.png"],"_css_loader":"../../../../../.nvm/versions/node/v14.2.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../../.nvm/versions/node/v14.2.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../.nvm/versions/node/v14.2.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../../.nvm/versions/node/v14.2.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -466,4 +466,4 @@ module.exports = function loadJSBundle(bundle) {
 },{}],0:[function(require,module,exports) {
 var b=require("../../../../../.nvm/versions/node/v14.2.0/lib/node_modules/parcel-bundler/src/builtins/bundle-loader.js");b.register("js",require("../../../../../.nvm/versions/node/v14.2.0/lib/node_modules/parcel-bundler/src/builtins/loaders/browser/js-loader.js"));b.load([]);
 },{}]},{},["../../../../../.nvm/versions/node/v14.2.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js",0], null)
-//# sourceMappingURL=/style.78032849.js.map
+//# sourceMappingURL=/investors.30b007e2.js.map
