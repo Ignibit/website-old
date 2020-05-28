@@ -248,9 +248,6 @@ iframe.yt {
 	max-width: 66%;
 }
 
-.navbar {
-}
-
 .navbar img.logo {
 	width: 12em;
 	max-width: 100%;
@@ -368,11 +365,6 @@ iframe.yt {
 .bar.blue {
 	background-color: #005896;
 	color: #ffffff;
-}
-
-.bar .head {
-	/*margin-top: 1em;*/
-	/*margin-bottom: 1em;*/
 }
 
 .pad {
@@ -675,20 +667,17 @@ textarea {
 
 .flex-outer li input[type='submit']:hover {
 	color: #005896;
-	outline: none;
 	background-color: #ddddff;
 }
 
 .flex-outer li input[type='submit']:active {
-	background-color: #0b89f0;
-	outline: none;
+	background-color: #0897f7;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
 }
 
 .footer {
 	color: #52b7ff;
-
 	margin-left: 3em;
 	margin-right: 3em;
 }

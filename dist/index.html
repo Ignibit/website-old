@@ -51,25 +51,20 @@ gtag('config', 'UA-117515928-1');</script>
 
 function submitToAPI(e) {
   event.preventDefault();
-  var URL = 'https://ju7qrql2j0.execute-api.eu-central-1.amazonaws.com/mailUsDeploy/contactus';
-  var Namere = /[A-Za-z]{1}[A-Za-z]/;
-
-  if (!Namere.test($('#name').val())) {
-    alert('Name can not be empty');
-    return;
-  }
-
-  if ($('#email').val() == '') {
-    alert('Please enter your email');
-    return;
-  }
-
-  var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-
-  if (!reeamil.test($('#email').val())) {
-    alert('Please enter valid email address');
-    return;
-  }
+  var URL = 'https://ju7qrql2j0.execute-api.eu-central-1.amazonaws.com/mailUsDeploy/contactus'; // var Namere = /[A-Za-z]{1}[A-Za-z]/;
+  // if (!Namere.test($('#name').val())) {
+  // 	alert('Name can not be empty');
+  // 	return;
+  // }
+  // if ($('#email').val() == '') {
+  // 	alert('Please enter your email');
+  // 	return;
+  // }
+  // var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+  // if (!reeamil.test($('#email').val())) {
+  // 	alert('Please enter valid email address');
+  // 	return;
+  // }
 
   var name = $('#name').val();
   var email = $('#email').val();
@@ -108,8 +103,6 @@ function closeModal() {
     $('#modal').find('.lightbox').find('.content').html('');
   });
 }</script>
-
-		<script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
 	<script src="/reset.dc9ff4e8.js"></script><script src="/style.78032849.js"></script></head>
 
 	<body>
@@ -623,7 +616,7 @@ function closeModal() {
 					<br>
 					<h1>Contact Form</h1>
 				</div>
-				<form class="contactform" id="contactform" action="?" method="POST">
+				<form class="contactform" id="contactform" method="POST">
 					<ul class="flex-outer">
 						<li>
 							<label for="first-name">Name</label>
@@ -636,9 +629,6 @@ function closeModal() {
 						<li>
 							<label for="message">Message</label>
 							<textarea rows="6" class="fi" id="body" name="body" placeholder="Enter your message here"></textarea>
-						</li>
-						<li>
-							<div class="g-recaptcha" data-sitekey="6LfDk_wUAAAAAN5zDBzRFFLvFeH7soPXWYSrLIJB"></div>
 						</li>
 						<li>
 							<input type="submit" class="fi" value="Send Message" id="submit" name="submit">

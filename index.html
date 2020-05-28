@@ -63,21 +63,21 @@
 				var URL =
 					'https://ju7qrql2j0.execute-api.eu-central-1.amazonaws.com/mailUsDeploy/contactus';
 
-				var Namere = /[A-Za-z]{1}[A-Za-z]/;
-				if (!Namere.test($('#name').val())) {
-					alert('Name can not be empty');
-					return;
-				}
-				if ($('#email').val() == '') {
-					alert('Please enter your email');
-					return;
-				}
+				// var Namere = /[A-Za-z]{1}[A-Za-z]/;
+				// if (!Namere.test($('#name').val())) {
+				// 	alert('Name can not be empty');
+				// 	return;
+				// }
+				// if ($('#email').val() == '') {
+				// 	alert('Please enter your email');
+				// 	return;
+				// }
 
-				var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-				if (!reeamil.test($('#email').val())) {
-					alert('Please enter valid email address');
-					return;
-				}
+				// var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+				// if (!reeamil.test($('#email').val())) {
+				// 	alert('Please enter valid email address');
+				// 	return;
+				// }
 
 				var name = $('#name').val();
 				var email = $('#email').val();
@@ -120,8 +120,6 @@
 				});
 			}
 		</script>
-
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	</head>
 
 	<body>
@@ -699,7 +697,7 @@
 					<br />
 					<h1>Contact Form</h1>
 				</div>
-				<form class="contactform" id="contactform" action="?" method="POST">
+				<form class="contactform" id="contactform" method="POST">
 					<ul class="flex-outer">
 						<li>
 							<label for="first-name">Name</label>
@@ -730,12 +728,6 @@
 								name="body"
 								placeholder="Enter your message here"
 							></textarea>
-						</li>
-						<li>
-							<div
-								class="g-recaptcha"
-								data-sitekey="6LfDk_wUAAAAAN5zDBzRFFLvFeH7soPXWYSrLIJB"
-							></div>
 						</li>
 						<li>
 							<input type="submit" class="fi" value="Send Message" id="submit" name="submit" />
