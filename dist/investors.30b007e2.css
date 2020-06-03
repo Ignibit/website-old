@@ -11,6 +11,7 @@ body {
 /* Header/logo Title */
 .header {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 	padding: 60px;
@@ -18,8 +19,23 @@ body {
 	color: white;
 }
 
+@media screen and (max-width: 850px) {
+	.header {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
 .strefa-text {
-	font-size: 2.5rem;
+	font-size: 2.5em;
+	text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+	.strefa-text {
+		font-size: 1.5em;
+	}
 }
 
 /* Style the top navigation bar */
@@ -48,12 +64,18 @@ body {
 	width: 100%;
 }
 
+@media screen and (max-width: 850px) {
+	.logo {
+		max-width: 3em;
+		padding-top: 10px;
+	}
+}
+
 /* Column container */
 .row {
 	display: flex;
 	flex-wrap: wrap;
 }
-
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
@@ -72,12 +94,19 @@ body {
 	flex: 70%;
 	background-color: white;
 	padding: 20px;
+	text-align: center;
 }
 
 .comingSoon {
 	color: #005896;
-	font-size: 50px;
+	font-size: 2.5em;
 	font-weight: 700;
+}
+
+@media screen and (max-width: 850px) {
+	.comingSoon {
+		font-size: 1.5em;
+	}
 }
 
 /* Fake image, just for this example */
