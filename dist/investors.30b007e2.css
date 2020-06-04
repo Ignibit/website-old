@@ -88,7 +88,8 @@ body {
 /* Main column */
 .main {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: flex-start;
 	align-items: center;
 	height: 60vh;
 	flex: 70%;
@@ -97,15 +98,25 @@ body {
 	text-align: center;
 }
 
-.comingSoon {
+.announceWZAtitle {
 	color: #005896;
-	font-size: 2.5em;
+	font-size: 2em;
 	font-weight: 700;
+	padding-bottom: 2rem;
+}
+
+.announceWZA:nth-child(n) {
+	text-align: justify;
+	width: 50vw;
 }
 
 @media screen and (max-width: 850px) {
-	.comingSoon {
-		font-size: 1.5em;
+	.announceWZAtitle {
+		font-size: 1.3em;
+	}
+	.announceWZA:nth-child(n) {
+		width: 80vw;
+		font-size: 0.7em;
 	}
 }
 
