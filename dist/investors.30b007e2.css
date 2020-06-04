@@ -105,8 +105,13 @@ body {
 	padding-bottom: 2rem;
 }
 
-.announceWZA:nth-child(n) {
+.announceWZA p {
 	text-align: justify;
+	width: 50vw;
+}
+
+.announceWZA li {
+	text-align: left;
 	width: 50vw;
 }
 
@@ -114,7 +119,11 @@ body {
 	.announceWZAtitle {
 		font-size: 1.3em;
 	}
-	.announceWZA:nth-child(n) {
+	.announceWZA p {
+		width: 80vw;
+		font-size: 0.7em;
+	}
+	.announceWZA li {
 		width: 80vw;
 		font-size: 0.7em;
 	}
