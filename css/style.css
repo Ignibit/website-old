@@ -534,8 +534,6 @@ iframe.yt {
 	background-color: rgba(0,0,0,0.2);
 	text-shadow: 0px 0px 10px 25px #eeeeee;
 }
-
-
 .row.cardrow .nav.nav_left{
 	left:0;
 	border-top-right-radius: 15px;
@@ -546,7 +544,6 @@ iframe.yt {
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
 }
-
 .row.cardrow .nav:hover{
 	color:#005896;
 	background-color: rgba(255,255,255,0.8);
