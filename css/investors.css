@@ -130,6 +130,15 @@ body {
 .downloadImage:hover {
 	cursor: pointer;
 }
+/* Footer */
+.footer {
+	margin-top: 10px;
+	font-size: 0.9em;
+	color: #52b7ff;
+	padding: 15px;
+	text-align: center;
+	background: #ddd;
+}
 
 @media screen and (max-width: 850px) {
 	.announceWZAtitle {
@@ -143,6 +152,11 @@ body {
 		width: 80vw;
 		font-size: 0.7em;
 	}
+	.footer {
+		margin-top: 5px;
+		padding: 10px;
+		font-size: 0.6em;
+	}
 }
 
 /* Fake image, just for this example */
@@ -150,13 +164,6 @@ body {
 	background-color: #aaa;
 	width: 100%;
 	padding: 20px;
-}
-
-/* Footer */
-.footer {
-	padding: 20px;
-	text-align: center;
-	background: #ddd;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
