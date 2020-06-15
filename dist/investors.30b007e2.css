@@ -91,10 +91,10 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	height: 60vh;
+	/* height: 60vh; */
 	flex: 70%;
 	background-color: white;
-	padding: 20px;
+	padding: 30px;
 	text-align: center;
 }
 
@@ -113,6 +113,22 @@ body {
 .announceWZA li {
 	text-align: left;
 	width: 50vw;
+}
+
+.appendix {
+	margin-top: 20px;
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+.appendixTitle {
+	text-align: center !important;
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+.downloadImage:hover {
+	cursor: pointer;
 }
 
 @media screen and (max-width: 850px) {
@@ -150,8 +166,6 @@ body {
 		flex-direction: column;
 	}
 }
-
-
 
 
 /*# sourceMappingURL=/investors.30b007e2.css.map */
