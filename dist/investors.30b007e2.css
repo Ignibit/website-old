@@ -140,6 +140,12 @@ body {
 	background: #ddd;
 }
 
+.linebreak {
+	margin: 30px;
+	border: solid 0.3px black;
+	width: 40vw;
+}
+
 @media screen and (max-width: 850px) {
 	.announceWZAtitle {
 		font-size: 1.3em;
