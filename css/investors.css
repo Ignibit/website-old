@@ -91,7 +91,7 @@ body {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	/* height: 60vh; */
+	/* min-height: 100vh; */
 	flex: 70%;
 	background-color: white;
 	padding: 30px;
@@ -132,7 +132,9 @@ body {
 }
 /* Footer */
 .footer {
-	margin-top: 10px;
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
 	font-size: 0.9em;
 	color: #52b7ff;
 	padding: 15px;
@@ -159,7 +161,6 @@ body {
 		font-size: 0.7em;
 	}
 	.footer {
-		margin-top: 5px;
 		padding: 10px;
 		font-size: 0.6em;
 	}
