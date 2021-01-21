@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -149,7 +149,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"css/style.css":[function(require,module,exports) {
+},{"./bundle-url":"../../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"css/style.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../img/vidbg.png":[["vidbg.e9642950.png","img/vidbg.png"],"img/vidbg.png"],"./../img/sbrbs.jpg":[["sbrbs.51b01278.jpg","img/sbrbs.jpg"],"img/sbrbs.jpg"],"./../img/trainingsbg.png":[["trainingsbg.6359c350.png","img/trainingsbg.png"],"img/trainingsbg.png"],"./../img/magicmirror.png":[["magicmirror.3209190e.png","img/magicmirror.png"],"img/magicmirror.png"],"./../img/shovroombg.png":[["shovroombg.9e91ee12.png","img/shovroombg.png"],"img/shovroombg.png"],"./../img/interactivebg.png":[["interactivebg.377a3b93.png","img/interactivebg.png"],"img/interactivebg.png"],"_css_loader":"../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./../img/vidbg.png":[["vidbg.e9642950.png","img/vidbg.png"],"img/vidbg.png"],"./../img/sbrbs.jpg":[["sbrbs.51b01278.jpg","img/sbrbs.jpg"],"img/sbrbs.jpg"],"./../img/trainingsbg.png":[["trainingsbg.6359c350.png","img/trainingsbg.png"],"img/trainingsbg.png"],"./../img/magicmirror.png":[["magicmirror.3209190e.png","img/magicmirror.png"],"img/magicmirror.png"],"./../img/shovroombg.png":[["shovroombg.9e91ee12.png","img/shovroombg.png"],"img/shovroombg.png"],"./../img/interactivebg.png":[["interactivebg.377a3b93.png","img/interactivebg.png"],"img/interactivebg.png"],"_css_loader":"../../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49246" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64650" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -393,5 +393,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+},{}]},{},["../../../../../../.nvm/versions/node/v15.0.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
 //# sourceMappingURL=/style.78032849.js.map
