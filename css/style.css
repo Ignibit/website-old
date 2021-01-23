@@ -90,6 +90,58 @@ iframe.yt {
 	height: 100%;
 }
 
+.crowd {
+	position: fixed;
+	right: 2%;
+	overflow: hidden;
+	flex: 0 0 auto;
+	width: 20em;
+	font-size: 1.2em;
+	margin: 1%;
+	float: left;
+	text-align: center;
+	border-radius: 10px;
+	background-color: #eeeeee;
+	color: #111111;
+	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
+	z-index: 10;
+}
+
+.crowd p.bold {
+	font-weight: 800;
+	color: #005896;
+}
+.crowd .rmore {
+	margin-top: 2em;
+	display: inline-block;
+}
+
+.crowd .rmore:after {
+	position: absolute;
+	content: 'More Info >>';
+	bottom: 0;
+	right: 0;
+	padding: 1.2em;
+}
+
+.crowd .description {
+	padding: 1em;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.crowd img {
+	width: 100%;
+	max-width: 100%;
+	display: block;
+}
+
+@media screen and (max-width: 850px) {
+	.crowd {
+		width: 15em;
+	}
+}
+
 .hero {
 	display: flex;
 	align-items: center;
@@ -294,7 +346,7 @@ iframe.yt {
 }
 
 .bar.fullheight {
-	min-height: 60vh;
+	min-height: 45 vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
