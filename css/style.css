@@ -92,7 +92,7 @@ iframe.yt {
 
 .crowd {
 	position: fixed;
-	right: 2%;
+	right: 1%;
 	overflow: hidden;
 	flex: 0 0 auto;
 	width: 20em;
@@ -107,12 +107,23 @@ iframe.yt {
 	z-index: 10;
 }
 
+.crowd .title {
+	color: #f37933;
+}
+
+.crowd p {
+	font-size: 1.1em;
+}
+
 .crowd p.bold {
+	font-size: 1.5em;
+	margin-top: 1em;
 	font-weight: 800;
-	color: #005896;
+	color: white;
+	background-color: #1130fb;
 }
 .crowd .rmore {
-	margin-top: 2em;
+	margin-top: 0.5em;
 	display: inline-block;
 }
 
@@ -138,7 +149,7 @@ iframe.yt {
 
 @media screen and (max-width: 850px) {
 	.crowd {
-		width: 15em;
+		width: 20em;
 	}
 }
 
