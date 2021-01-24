@@ -122,13 +122,19 @@
 				});
 			}
 		</script>
+		<script>
+			function crowdHide() {
+				document.getElementById('crowd').style.display='none'
+			}
+		</script>
 	</head>
 
 	
 	<body>
-		<div class='crowd'>	
-				<div class="description">
-					<h2 class="title">COMING SOON!</h2>
+		<div class='crowd' id='crowd'>	
+			<div class="description">
+				<button onclick='crowdHide()' class='button'><p>&times;</p></button>
+				<h2 class="title">COMING SOON!</h2>
 					<img src='/img/crowd_igni.png' />
 					<p class="bold">OUR CROWDFUNDING CAMPAIGN!</p>
 					<p>

@@ -110,13 +110,17 @@ function closeModal() {
     $('#modal').find('.lightbox').find('.content').html('');
   });
 }</script>
+		<script>function crowdHide() {
+  document.getElementById('crowd').style.display = 'none';
+}</script>
 	<script src="/reset.dc9ff4e8.js"></script><script src="/style.78032849.js"></script></head>
 
 	
 	<body>
-		<div class="crowd">	
-				<div class="description">
-					<h2 class="title">COMING SOON!</h2>
+		<div class="crowd" id="crowd">	
+			<div class="description">
+				<button onclick="crowdHide()" class="button"><p>&times;</p></button>
+				<h2 class="title">COMING SOON!</h2>
 					<img src="/crowd_igni.48a3f88e.png">
 					<p class="bold">OUR CROWDFUNDING CAMPAIGN!</p>
 					<p>

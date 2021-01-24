@@ -94,21 +94,74 @@ iframe.yt {
 	position: fixed;
 	right: 1%;
 	overflow: hidden;
-	flex: 0 0 auto;
+	/* flex: 0 0 auto; */
 	width: 20em;
 	font-size: 1.2em;
 	margin: 1%;
-	float: left;
+	/* float: left; */
 	text-align: center;
 	border-radius: 10px;
 	background-color: #eeeeee;
 	color: #111111;
 	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
-	z-index: 10;
+	z-index: 1000;
+}
+
+.crowd .description {
+	display: flex;
+	flex-flow: column;
+}
+
+/* .crowd button {
+	width: 1.5em;
+	height: 1.5em;
+	justify-self: right;
+	border-radius: 10px;
+	color: white;
+	background-color: grey;
+	border: none;
+	outline: none;
+} */
+
+.crowd button {
+	background-color: white;
+	border: 3px solid #f37933;
+	color: #f37933;
+	border-radius: 50px;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: none;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 1.4em;
+	width: 1.2em;
+	height: 1.2em;
+	line-height: 0;
+	/* width: 30px;
+	height: 30px; */
+	text-align: center;
+	outline: none;
+	z-index: 1000;
+	vertical-align: middle;
+	transition-duration: 0.4s;
+}
+
+.crowd button:hover {
+	background-color: #f37933;
+	color: white;
 }
 
 .crowd .title {
 	color: #f37933;
+}
+
+.crowd button p {
+	display: block;
+	margin-block-start: 0px;
+	margin-block-end: 2px;
+	margin-inline-start: -1px;
 }
 
 .crowd p {
