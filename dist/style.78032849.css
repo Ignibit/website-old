@@ -124,8 +124,9 @@ iframe.yt {
 } */
 
 .crowd button {
-	background-color: white;
-	border: 3px solid #f37933;
+	/* background-color: white; */
+	/* border: 3px solid #f37933; */
+	border: none;
 	color: #f37933;
 	border-radius: 50px;
 	cursor: pointer;
