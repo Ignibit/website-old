@@ -124,16 +124,17 @@
 		</script>
 		<script>
 			function crowdHide() {
-				document.getElementById('crowd').style.display='none'
+				document.getElementById('crowd').style.display='none';
+				console.log('display none');
 			}
 		</script>
 	</head>
 
 	
 	<body>
-		<!-- <div class='crowd' id='crowd'>	
+		<div class='crowd' id="crowd">	
 			<div class="description">
-				<button onclick='crowdHide()' class='button'><p>&times;</p></button>
+				<button onclick="crowdHide()" class='button'><p>&times;</p></button>
 				<h2 class="title">COMING SOON!</h2>
 					<img src='/img/crowd_igni.png' />
 					<p class="bold">OUR CROWDFUNDING CAMPAIGN!</p>
@@ -147,7 +148,7 @@
 				</br>
 					<a href="https://crowdconnect.pl/" target="_blank" class="rmore"></a>
 				</div>
-		</div> -->
+		</div>
 
 
 		<div id="modal_wrapper">
