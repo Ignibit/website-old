@@ -122,9 +122,34 @@
 				});
 			}
 		</script>
+		<script>
+			function crowdHide() {
+				document.getElementById('crowd').style.display='none'
+			}
+		</script>
 	</head>
 
+	
 	<body>
+		<div class='crowd' id='crowd'>	
+			<div class="description">
+				<button onclick='crowdHide()' class='button'><p>&times;</p></button>
+				<h2 class="title">COMING SOON!</h2>
+					<img src='/img/crowd_igni.png' />
+					<p class="bold">OUR CROWDFUNDING CAMPAIGN!</p>
+					<p>
+						Dear Ignibit friends!❤️ Don't miss out the unique opportunity to support us in our mission to deliver awesome stuff!
+					</p>
+					<p style='font-size: 0.6em'>
+						This material is for promotional and advertising purposes only and the type of public offering does not require
+						preparation and publication of a prospectus or information memorandum.
+					</p>
+				</br>
+					<a href="https://crowdconnect.pl/" target="_blank" class="rmore"></a>
+				</div>
+		</div>
+
+
 		<div id="modal_wrapper">
 			<div class="modal" id="modal">
 				<div class="lightbox">
@@ -133,6 +158,7 @@
 				</div>
 			</div>
 		</div>
+		
 
 		<div class="hero">
 			<div class="bgvid_container">

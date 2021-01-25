@@ -90,6 +90,123 @@ iframe.yt {
 	height: 100%;
 }
 
+.crowd {
+	position: fixed;
+	right: 1%;
+	overflow: hidden;
+	/* flex: 0 0 auto; */
+	width: 20em;
+	font-size: 1.2em;
+	margin: 1%;
+	/* float: left; */
+	text-align: center;
+	border-radius: 10px;
+	background-color: #eeeeee;
+	color: #111111;
+	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+}
+
+.crowd .description {
+	display: flex;
+	flex-flow: column;
+}
+
+/* .crowd button {
+	width: 1.5em;
+	height: 1.5em;
+	justify-self: right;
+	border-radius: 10px;
+	color: white;
+	background-color: grey;
+	border: none;
+	outline: none;
+} */
+
+.crowd button {
+	/* background-color: white; */
+	/* border: 3px solid #f37933; */
+	border: none;
+	color: #f37933;
+	border-radius: 50px;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: none;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 1.4em;
+	width: 1.2em;
+	height: 1.2em;
+	line-height: 0;
+	/* width: 30px;
+	height: 30px; */
+	text-align: center;
+	outline: none;
+	z-index: 1000;
+	vertical-align: middle;
+	transition-duration: 0.4s;
+}
+
+.crowd button:hover {
+	transform: scale(2);
+	transition-duration: 0.4s;
+}
+
+.crowd .title {
+	color: #f37933;
+}
+
+.crowd button p {
+	display: block;
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+	/* margin-inline-start: 1px; */
+}
+
+.crowd p {
+	font-size: 1.1em;
+}
+
+.crowd p.bold {
+	font-size: 1.5em;
+	margin-top: 1em;
+	font-weight: 800;
+	color: white;
+	background-color: #1130fb;
+}
+.crowd .rmore {
+	margin-top: 0.5em;
+	display: inline-block;
+}
+
+.crowd .rmore:after {
+	position: absolute;
+	content: 'More Info >>';
+	bottom: 0;
+	right: 0;
+	padding: 1.2em;
+}
+
+.crowd .description {
+	padding: 1em;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.crowd img {
+	width: 100%;
+	max-width: 100%;
+	display: block;
+}
+
+@media screen and (max-width: 850px) {
+	.crowd {
+		width: 20em;
+	}
+}
+
 .hero {
 	display: flex;
 	align-items: center;
@@ -294,7 +411,7 @@ iframe.yt {
 }
 
 .bar.fullheight {
-	min-height: 45vh;
+	min-height: 45 vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
